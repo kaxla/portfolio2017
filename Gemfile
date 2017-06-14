@@ -18,6 +18,7 @@ gem 'turbolinks', '~> 5'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'database_cleaner'
+  gem 'factory_girl_rails'
   gem 'rspec-rails'
 end
 
