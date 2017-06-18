@@ -1,73 +1,70 @@
 require 'rails_helper'
-require 'spec_helper'
+include FeatureHelpers
 
-RSpec.describe "creating a new project" do
-  it "creates a new project from /new url" do
-    visit '/projects/new'
-    fill_in "Title", with: "My cool project title"
-    fill_in "Description", with: "My cool project description"
-    click_button "Create Project"
-    expect(page).to have_content "Index of Projects"
-    expect(page).to have_content "My cool project title"
-    expect(page).to have_content "My cool project description"
+RSpec.describe 'Projects' do
+
+  describe 'creating a new project' do
+    it 'creates project from /new url' do
+      visit '/projects/new'
+      fill_in_project_form
+      expect(page).to have_content 'Index of Projects'
+      expect(page).to have_content 'My cool project title'
+      expect(page).to have_content 'My cool project description'
+    end
+
+    it 'creates project from index' do
+      visit '/projects'
+      click_link 'Create New Project'
+      fill_in_project_form
+      expect(page).to have_content 'Index of Projects'
+      expect(page).to have_content 'My cool project title'
+      expect(page).to have_content 'My cool project description'
+    end
   end
 
-  it "creates project from index" do
-    visit '/projects'
-    click_link 'Create New Project'
-    fill_in "Title", with: "My cool project title"
-    fill_in "Description", with: "My cool project description"
-    click_button "Create Project"
-    expect(page).to have_content "Index of Projects"
-    expect(page).to have_content "My cool project title"
-    expect(page).to have_content "My cool project description"
-  end
-end
+  describe 'showing a project' do
+    let!(:project) {create(:project)}
 
-RSpec.describe "showing a project" do
-  before do
-    @project = FactoryGirl.create(:project)
+    it 'shows project index page' do
+      visit '/projects'
+      click_link project.title
+      expect(page).to have_selector('h1', text: project.title)
+    end
   end
 
-  it "shows project from index page" do
-    visit '/projects'
-    click_link @project.title
-    expect(page).to have_selector('h1', text: @project.title)
-  end
-end
+  describe 'editing a Project' do
+    let!(:project) {create(:project)}
 
-RSpec.describe "editing a Project" do
-  before do
-    @project = FactoryGirl.create(:project)
-  end
+    it 'edits from index page' do
+      visit '/projects'
+      click_link 'Edit'
+      expect(page).to have_content 'Editing'
+      expect(page).to have_content project.title
+    end
 
-  it "takes you to the edit page when you click edit from the index page" do
-    visit '/projects'
-    click_link "Edit"
-    expect(page).to have_content @project.title
-  end
-
-  # it "takes you to the edit page when you click edit from the show page" do
-  #
-  # end
-end
-
-RSpec.describe "deleting a Project", js: true do
-  before do
-    @project = FactoryGirl.create(:project)
+    it 'edits from show page' do
+      visit project_path(project)
+      click_link 'Edit'
+      expect(page).to have_content 'Editing'
+      expect(page).to have_content project.title
+    end
   end
 
-  it "deletes from the index page" do
-    visit '/projects'
-    click_link 'Delete'
-    page.driver.browser.switch_to.alert.accept
-    expect(page).not_to have_content @project.title
-  end
+  describe 'deleting a Project', js: true do
+    let!(:project) {create(:project)}
 
-  it "deletes from the show page" do
-    visit project_path(@project.id)
-    click_link 'Delete Project'
-    page.driver.browser.switch_to.alert.accept
-    expect(page).not_to have_content @project.title
+    it 'deletes from index page' do
+      visit '/projects'
+      click_link 'Delete'
+      page.driver.browser.switch_to.alert.accept
+      expect(page).not_to have_content project.title
+    end
+
+    it 'deletes from show page' do
+      visit project_path(project.id)
+      click_link 'Delete Project'
+      page.driver.browser.switch_to.alert.accept
+      expect(page).not_to have_content project.title
+    end
   end
 end
