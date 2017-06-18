@@ -1,2 +1,7 @@
-<h1>Project#index</h1>
-<p>Find me in app/views/project/index.html.erb</p>
+<h1>Index of Projects</h1>
+<% @projects.each do |p| %>
+  <%= p.title %>
+  <%= p.description %>
+  <%= link_to "Edit", edit_project_path(p) %>
+  <%= link_to "Delete", project_path(p), method: :delete, data: {confirm: "No, but really?"} %>
+<% end %>

@@ -8,18 +8,28 @@ class ProjectsController < ApplicationController
   end
 
   def new
+    @project = Project.new
   end
 
   def edit
   end
 
   def create
+    @project = Project.new(project_params)
+
+    if @project.save
+      redirect_to projects_path, notice: 'Project was successfully created'
+    else
+      render action: 'new', notice: 'Something went wrong, try again'
+    end
   end
 
   def update
   end
 
   def destroy
+    @project.destroy
+    redirect_to projects_path
   end
 
   private
