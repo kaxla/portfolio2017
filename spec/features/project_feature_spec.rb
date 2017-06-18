@@ -24,15 +24,17 @@ RSpec.describe "creating a new project" do
   end
 end
 
-# Rspec.describe "showing a project" do
-#   before do
-#     @project = FactoryGirl.create(:project)
-#   end
-#
-#   it "shows project from index page" do
-#
-#   end
-# end
+RSpec.describe "showing a project" do
+  before do
+    @project = FactoryGirl.create(:project)
+  end
+
+  it "shows project from index page" do
+    visit '/projects'
+    click_link @project.title
+    expect(page).to have_selector('h1', text: @project.title)
+  end
+end
 
 RSpec.describe "editing a Project" do
   before do
