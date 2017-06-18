@@ -25,6 +25,11 @@ class ProjectsController < ApplicationController
   end
 
   def update
+    if @project.update(project_params)
+      redirect_to @project, notice: 'Project was successfully updated.'
+    else
+      render action: 'edit', notice: 'Something went wrong, please try again'
+    end
   end
 
   def destroy
