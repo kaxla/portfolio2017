@@ -12,9 +12,16 @@ RSpec.describe "creating a new project" do
     expect(page).to have_content "My cool project description"
   end
 
-  # it "creates project from index" do
-  #
-  # end
+  it "creates project from index" do
+    visit '/projects'
+    click_link 'Create New Project'
+    fill_in "Title", with: "My cool project title"
+    fill_in "Description", with: "My cool project description"
+    click_button "Create Project"
+    expect(page).to have_content "Index of Projects"
+    expect(page).to have_content "My cool project title"
+    expect(page).to have_content "My cool project description"
+  end
 end
 
 # Rspec.describe "showing a project" do
