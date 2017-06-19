@@ -1,5 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
+
   def index
     @projects = Project.all
   end
@@ -45,5 +47,9 @@ class ProjectsController < ApplicationController
 
     def set_project
       @project = Project.find(params[:id])
+    end
+
+    def require_login
+      redirect_to root_path, notice: 'You need to be logged in to do that' unless logged_in?
     end
 end
