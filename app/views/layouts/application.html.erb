@@ -12,6 +12,8 @@
   </head>
 
   <body>
+    <%= render 'layouts/header' %>
+
     <% flash.each do |key, value| %>
       <%= value %>
     <% end %>
@@ -19,7 +21,9 @@
     <% if logged_in? %>
       <%= link_to 'Log Out', logout_path %>
     <% end %>
+
     <%= yield %>
 
+    <%= render 'layouts/footer' %>
   </body>
 </html>
