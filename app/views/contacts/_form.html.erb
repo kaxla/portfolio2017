@@ -1,0 +1,6 @@
+<%= form_with model: Contact.new, url: contact_path do |f| %>
+  <%= f.text_field :name, placeholder: 'name', class: :name %>
+  <%= f.email_field :email, placeholder: 'email', class: :email %>
+  <%= f.text_area :message, placeholder: 'message', class: :message %>
+  <%= f.submit 'Send' %>
+<% end %>
