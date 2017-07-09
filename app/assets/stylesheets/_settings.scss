@@ -56,12 +56,19 @@ $foundation-palette: (
   warning: #ffae00,
   alert: #cc4b37,
 );
+
+$yellow: #FFD265;
+$blue: #D2DDDC;
+$off-white: #F7F8EC;
+$purple: #433447;
+$black: #272C32;
+
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
-$black: #0a0a0a;
+// $black: #0a0a0a;
 $white: #fefefe;
-$body-background: $white;
+$body-background: $off-white;
 $body-font-color: $black;
 $body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
@@ -412,11 +419,11 @@ $mediaobject-image-width-stacked: 100%;
 $menu-margin: 0;
 $menu-margin-nested: 1rem;
 $menu-item-padding: 0.7rem 1rem;
-$menu-item-color-active: $white;
-$menu-item-background-active: get-color(primary);
+$menu-item-color-active: $yellow; //text color
+$menu-item-background-active: $purple; //background-color
 $menu-icon-spacing: 0.25rem;
 $menu-item-background-hover: $light-gray;
-$menu-border: $light-gray;
+$menu-border: pink;
 
 // 23. Meter
 // ---------
@@ -588,11 +595,11 @@ $thumbnail-radius: $global-radius;
 // 35. Title Bar
 // -------------
 
-$titlebar-background: $black;
-$titlebar-color: $white;
+$titlebar-background: $yellow;
+$titlebar-color: $purple;
 $titlebar-padding: 0.5rem;
 $titlebar-text-font-weight: bold;
-$titlebar-icon-color: $white;
+$titlebar-icon-color: $purple;
 $titlebar-icon-color-hover: $medium-gray;
 $titlebar-icon-spacing: 0.25rem;
 
@@ -613,7 +620,7 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0.5rem;
-$topbar-background: $light-gray;
+$topbar-background: $yellow;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
 $topbar-input-width: 200px;

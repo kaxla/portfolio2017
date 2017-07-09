@@ -1,10 +1,22 @@
-<div>
-  <ul>
-    <li><%= link_to 'Home', root_path %></li>
-    <li><%= link_to 'Resume', root_path %></li>
-    <li><%= link_to 'Projects', projects_path %></li>
-    <li><%= link_to 'Contact', contact_path %></li>
-    <li><a href="http://github.com/kaxla">Github</a></li>
-    <li><a href="http://linkedin.com/in/kaylahowser">LinkedIn</a></li>
-  </ul>
-</div>
+<header>
+  <div class="title-bar" data-responsive-toggle="header-menu" data-hide-for="medium">
+    <button class="menu-icon" type="button" data-toggle="header-menu"></button>
+    <div class="title-bar-title"></div>
+  </div>
+
+  <div class="top-bar" id="header-menu">
+    <ul class="dropdown vertical medium-horizontal menu" data-dropdown-menu>
+      <li <% if controller.controller_name == 'static_pages' %> class='active' <% end %>><%= link_to 'Home', root_path %></li>
+      <li <% if controller.controller_name == 'welcome' %> class='active' <% end %>><%= link_to 'Resume', root_path %></li>
+      <li <% if controller.controller_name == 'projects' %> class='active' <% end %>><%= link_to 'Projects', projects_path %></li>
+      <li <% if controller.controller_name == 'contacts' %> class='active' <% end %>><%= link_to 'Contact', contact_path %></li>
+      <li><a href="http://github.com/kaxla">Github</a></li>
+      <li><a href="http://linkedin.com/in/kaylahowser">LinkedIn</a></li>
+      <% if logged_in? %>
+        <li>
+          <%= link_to 'Log Out', logout_path %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</header>

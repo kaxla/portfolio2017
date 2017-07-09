@@ -1,0 +1,22 @@
+header {
+  // @include grid-row;
+  font-family: 'Karla', sans-serif;
+  background-color: $yellow;
+
+  a {
+    color: $black;
+  }
+
+  a:visited {
+    color: $black;
+  }
+
+  a:hover {
+    background-color: $purple;
+    color: $yellow;
+  }
+
+  .top-bar .toggle-topbar.menu-icon {
+    margin-left: 50%
+  }
+}
