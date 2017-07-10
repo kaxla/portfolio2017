@@ -1,1 +1,80 @@
+.homepage {
+  font-family: "Karla", serif;
+  color: $purple;
 
+  .name-wrapper {
+    @include grid-row;
+    padding: 20px 0;
+  }
+
+  .name {
+    @include grid-column();
+    text-align: center;
+
+    h1 {
+      font-family: "Mr Bedfort", cursive;
+      margin: 0;
+    }
+  }
+
+  .headshot {
+    width: 40%;
+    margin: 0 auto 20px auto;
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  .blurb {
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  hr {
+    color: $blue;
+    background: $blue;
+    border: 0;
+    height: 3px;
+    width: 90%;
+  }
+
+  .resume-link-wrapper {
+    background-color: $yellow;
+    color: $purple;
+    padding: 25px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  resume-link-wrapper:hover {
+    background-color: $purple;
+    color: $yellow;
+  }
+  .resume-link {
+    font-family: "Josefin Sans", sans;
+    text-transform: uppercase;
+  }
+
+  .section-header {
+    text-align: center;
+
+    h2 {
+      font-family: "Mr Bedfort";
+    }
+  }
+
+  .project {
+    padding: 30px;
+    margin: 20px;
+    border: 3px solid $blue;
+    text-align: center;
+
+    a {
+      font-family: "Josefin Sans", sans;
+      text-transform: uppercase;
+      color: $purple;
+      font-size: 1.3rem;
+    }
+  }
+}

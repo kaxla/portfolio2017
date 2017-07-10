@@ -1,38 +1,59 @@
-<h1>Kayla Howser</h1>
+<div class="homepage">
+  <div class="name-wrapper">
+    <div class="name">
+      <h1>Kayla Howser</h1>
+    </div>
+  </div>
 
-<img></img>
 
-<p>
-  Skilled full-stack Ruby developer with a knack for bringing tech to the non-technical looking to join an
-  established company with a strong mission and a great culture
-</p>
+  <div class="headshot-wrapper">
+    <div class="headshot">
+      <img src=https://s3-us-west-2.amazonaws.com/kaylahowser2017portfolio/portfolio+headshot+small.png></img>
+    </div>
+  </div>
 
-<hr>
+  <div class="blurb">
+    Skilled full-stack Ruby developer with a knack for bringing tech to the non-technical looking to join an
+    established company with a strong mission and a great culture
+  </div>
 
-<div>
-  Download My Resume
+  <hr>
+
+  <a class="resume-link" href="#">
+    <div class="resume-link-wrapper">
+      Download My Resume
+    </div>
+  </a>
+
+  <hr>
+
+  <div class="section-header">
+    <h2>About</h2>
+  </div>
+
+  <div class="blurb">
+    With a long-standing interest in web design and development, I built my first website on Angelfire in 2003.
+    I worked in customer support for years but found myself at a crossroads with a strong desire to learn new things.
+    I turned back to my passion for the web, this time in a professional setting. I’ve always been able to empathize
+    and communicate effectively with customers and my relationship management skills have helped me thrive as a
+    freelance developer. Right now, I’ m looking to join a team disrupting their industry. I’d love to work with a
+    company that values my strong understanding of customer needs and my ability to write excellent code,
+    where I will immerse myself in a great product and expand upon my skills.
+  </div>
+
+  <hr>
+
+  <div class="section-header">
+    <h2>Projects</h2>
+  </div>
+
+  <div class="projects-wrapper">
+    <% @projects.each do |project| %>
+      <div class="project">
+        <%= link_to "#{project.title}", project_path(project.id) %>
+      </div>
+    <% end %>
+  </div>
+
+  <hr>
 </div>
-
-<hr>
-
-<h2>About</h2>
-
-<p>
-  With a long-standing interest in web design and development, I built my first website on Angelfire in 2003.
-  I worked in customer support for years but found myself at a crossroads with a strong desire to learn new things.
-  I turned back to my passion for the web, this time in a professional setting. I’ve always been able to empathize
-  and communicate effectively with customers and my relationship management skills have helped me thrive as a
-  freelance developer. Right now, I’ m looking to join a team disrupting their industry. I’d love to work with a
-  company that values my strong understanding of customer needs and my ability to write excellent code,
-  where I will immerse myself in a great product and expand upon my skills.
-</p>
-
-<hr>
-
-<h2>Projects</h2>
-
-<% @projects.each do |project| %>
-  <%= link_to "#{project.title}", project_path(project.id) %>
-<% end %>
-
-<hr>
