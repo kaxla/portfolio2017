@@ -7,8 +7,10 @@ end
 
 gem 'rails', '~> 5.1.1'
 
+gem 'aws-sdk', '~> 2.3.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'foundation-rails'
+gem 'paperclip', '~> 5.0.0'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
