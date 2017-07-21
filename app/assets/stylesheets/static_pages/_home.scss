@@ -1,14 +1,11 @@
 .homepage {
-  font-family: "Karla", serif;
-  color: $purple;
+  padding: 5%;
 
   .name-wrapper {
-    @include grid-row;
     padding: 20px 0;
   }
 
   .name {
-    @include grid-column();
     text-align: center;
 
     h1 {
@@ -18,9 +15,11 @@
   }
 
   .headshot {
-    width: 40%;
-    margin: 0 auto 20px auto;
+    text-align: center;
+    padding-bottom: 20px;
+
     img {
+      width: 65%;
       border-radius: 50%;
     }
   }
@@ -40,7 +39,6 @@
 
   .resume-link-wrapper {
     background-color: $yellow;
-    color: $purple;
     padding: 25px;
     width: 80%;
     margin: 0 auto;
@@ -65,16 +63,47 @@
   }
 
   .project {
-    padding: 30px;
-    margin: 20px;
-    border: 3px solid $blue;
-    text-align: center;
+    .title-block {
+      text-align: center;
+      border: 3px solid $blue;
+      padding: 30px 0;
+    }
 
     a {
       font-family: "Josefin Sans", sans;
       text-transform: uppercase;
       color: $purple;
       font-size: 1.3rem;
+    }
+  }
+}
+
+@include breakpoint(medium) {
+  .homepage {
+    padding: 0 10%;
+
+    .name-wrapper {
+      padding: 40px 0;
+    }
+
+    hr {
+      width: 100%;
+    }
+
+    .resume-link {
+      padding: 20px 0;
+    }
+
+    .section-header {
+      padding-top: 25px;
+    }
+
+    .projects-header {
+      padding-bottom: 25px;
+    }
+
+    .section-content-wrapper {
+      padding-bottom: 25px
     }
   }
 }

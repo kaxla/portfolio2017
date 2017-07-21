@@ -5,22 +5,21 @@
     </div>
   </div>
 
-
-  <div class="headshot-wrapper">
-    <div class="headshot">
+  <div class="row align-center-middle">
+    <div class="headshot small-12 medium-expand columns">
       <img src=https://s3-us-west-2.amazonaws.com/kaylahowser2017portfolio/portfolio+headshot+small.png></img>
     </div>
-  </div>
 
-  <div class="blurb">
-    Skilled full-stack Ruby developer with a knack for bringing tech to the non-technical looking to join an
-    established company with a strong mission and a great culture
+    <div class="blurb small-12 medium-expand columns">
+      Skilled full-stack Ruby developer with a knack for bringing tech to the non-technical looking to join an
+      established company with a strong mission and a great culture
+    </div>
   </div>
 
   <hr>
 
-  <a class="resume-link" href="#">
-    <div class="resume-link-wrapper">
+  <a class="resume-link row" href="#">
+    <div class="resume-link-wrapper medium-6 columns">
       Download My Resume
     </div>
   </a>
@@ -31,26 +30,30 @@
     <h2>About</h2>
   </div>
 
-  <div class="blurb">
-    With a long-standing interest in web design and development, I built my first website on Angelfire in 2003.
-    I worked in customer support for years but found myself at a crossroads with a strong desire to learn new things.
-    I turned back to my passion for the web, this time in a professional setting. I’ve always been able to empathize
-    and communicate effectively with customers and my relationship management skills have helped me thrive as a
-    freelance developer. Right now, I’ m looking to join a team disrupting their industry. I’d love to work with a
-    company that values my strong understanding of customer needs and my ability to write excellent code,
-    where I will immerse myself in a great product and expand upon my skills.
+  <div class="section-content-wrapper row align-center">
+    <div class="blurb medium-10 columns">
+      With a long-standing interest in web design and development, I built my first website on Angelfire in 2003.
+      I worked in customer support for years but found myself at a crossroads with a strong desire to learn new things.
+      I turned back to my passion for the web, this time in a professional setting. I’ve always been able to empathize
+      and communicate effectively with customers and my relationship management skills have helped me thrive as a
+      freelance developer. Right now, I’ m looking to join a team disrupting their industry. I’d love to work with a
+      company that values my strong understanding of customer needs and my ability to write excellent code,
+      where I will immerse myself in a great product and expand upon my skills.
+    </div>
   </div>
 
   <hr>
 
-  <div class="section-header">
+  <div class="section-header projects-header">
     <h2>Projects</h2>
   </div>
 
-  <div class="projects-wrapper">
+  <div class="row small-up-1 medium-up-2">
     <% @projects.each do |project| %>
-      <div class="project">
-        <%= link_to "#{project.title}", project_path(project.id) %>
+      <div class="project column column-block">
+        <div class="title-block">
+          <%= link_to "#{project.title}", project_path(project.id) %>
+        </div>
       </div>
     <% end %>
   </div>
