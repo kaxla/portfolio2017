@@ -19,7 +19,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
 
-    if @project.valid?
+    if @project.save
       redirect_to projects_path, notice: 'Project was successfully created'
     else
       render action: 'new', notice: 'Something went wrong, try again'
