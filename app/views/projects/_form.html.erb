@@ -10,13 +10,13 @@
   </div>
 
   <div>
-    <%= f.file_field :image_1 %>
-    <%= f.file_field :image_2 %>
-    <%= f.file_field :image_3 %>
-    <%= f.file_field :image_4 %>
+    <%= f.file_field :image_1, class: "choose-file-button"%>
+    <%= f.file_field :image_2, class: "choose-file-button"%>
+    <%= f.file_field :image_3, class: "choose-file-button"%>
+    <%= f.file_field :image_4, class: "choose-file-button"%>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "submit-button" %>
   </div>
 <% end %>

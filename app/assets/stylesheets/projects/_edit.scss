@@ -1,0 +1,26 @@
+.project-form {
+  h1 {
+    font-family: "Mr Bedfort", cursive;
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  form {
+    padding: 0 15%;
+  }
+
+  textarea {
+    height: 300px;
+  }
+
+  .choose-file-button {
+    font-family: "Karla", sans;
+    text-transform: uppercase;
+  }
+
+  .submit-button {
+    @include button($expand: true);
+    font-family: "Josefin Sans", sans;
+    text-transform: uppercase;
+  }
+}
