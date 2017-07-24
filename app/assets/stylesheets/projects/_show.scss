@@ -1,0 +1,26 @@
+.project-show {
+  h1 {
+    text-align: center;
+    font-family: "Mr Bedfort", cursive;
+    padding-top: 30px;
+  }
+
+  .project-description {
+    padding: 0 30px;
+  }
+
+  .delete-edit {
+    text-align: center;
+    font-family: "Josefin Sans", sans;
+    text-transform: uppercase;
+    padding: 30px
+  }
+}
+
+@include breakpoint(medium) {
+  .project-show {
+    .project-description {
+      padding: 0 15%;
+    }
+  }
+}

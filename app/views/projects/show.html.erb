@@ -1,6 +1,11 @@
-<h1><%= @project.title %></h1>
-<p><%= @project.description %></p>
-<% if logged_in? %>
-  <%= link_to "Delete Project", project_path(@project), method: :delete, data: {confirm: "No, but really?"} %>
-  <%= link_to "Edit Project", edit_project_path(@project) %>
-<% end %>
+<div class="project-show">
+  <h1><%= @project.title %></h1>
+  <div class="project-description"><%= @project.description %></div>
+
+  <div class="delete-edit">
+    <% if logged_in? %>
+      <%= link_to "Delete Project", project_path(@project), method: :delete, data: {confirm: "No, but really?"}, class: 'delete button' %>
+      <%= link_to "Edit Project", edit_project_path(@project), class: "delete button" %>
+    <% end %>
+  </div>
+</div>
