@@ -1,17 +1,22 @@
 <div class="row small-up-1 medium-up-2 project-wrapper">
   <% @projects.each do |project| %>
     <div class="project column column-block">
+
       <a href="<%= project_path(project.id) %>">
-        <div class="title-block align-self-middle">
-          <div class="project-title"><%= project.title %></div>
-          <div class="logged-in">
-            <% if logged_in? %>
-              <%= button_to 'Edit', edit_project_path(project) %>
-              <%= button_to 'Delete', project_path(project), method: :delete, data: {confirm: 'No, but really?'} %>
-            <% end %>
+        <div class="title-block">
+          <div class="project-title">
+            <%= project.title %>
+            <div class="logged-in">
+              <% if logged_in? %>
+              <%= link_to 'Edit', edit_project_path(project), class: 'button tiny' %>
+              <%= link_to 'Delete', project_path(project), method: :delete, data: {confirm: 'No, but really?'}, class: 'button tiny' %>
+              <% end %>
+            </div>
           </div>
+          
         </div>
       </a>
+
     </div>
   <% end %>
 </div>
