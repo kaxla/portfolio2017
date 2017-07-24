@@ -22,7 +22,7 @@ class ProjectsController < ApplicationController
     if @project.save
       redirect_to projects_path, notice: 'Project was successfully created'
     else
-      render action: 'new', notice: 'Something went wrong, try again'
+      render action: 'new', alert: 'Something went wrong, try again'
     end
   end
 
@@ -30,7 +30,7 @@ class ProjectsController < ApplicationController
     if @project.update(project_params)
       redirect_to @project, notice: 'Project was successfully updated.'
     else
-      render action: 'edit', notice: 'Something went wrong, please try again'
+      render action: 'edit', alert: 'Something went wrong, please try again'
     end
   end
 
@@ -50,6 +50,6 @@ class ProjectsController < ApplicationController
     end
 
     def require_login
-      redirect_to root_path, notice: 'You need to be logged in to do that' unless logged_in?
+      redirect_to root_path, alert: 'You need to be logged in to do that' unless logged_in?
     end
 end
