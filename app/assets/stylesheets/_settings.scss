@@ -120,16 +120,16 @@ $header-lineheight: 1.4;
 $header-margin-bottom: 0.5rem;
 $header-styles: (
   small: (
-    'h1': ('font-size': 40),
-    'h2': ('font-size': 28),
+    'h1': ('font-size': 60),
+    'h2': ('font-size': 40),
     'h3': ('font-size': 19),
     'h4': ('font-size': 18),
     'h5': ('font-size': 17),
     'h6': ('font-size': 16),
   ),
   medium: (
-    'h1': ('font-size': 72),
-    'h2': ('font-size': 40),
+    'h1': ('font-size': 80),
+    'h2': ('font-size': 60),
     'h3': ('font-size': 31),
     'h4': ('font-size': 25),
     'h5': ('font-size': 20),
@@ -250,9 +250,9 @@ $breadcrumbs-item-slash: true;
 $button-padding: 0.85em 1em;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
-$button-background: $primary-color;
-$button-background-hover: scale-color($button-background, $lightness: -15%);
-$button-color: $white;
+$button-background: $blue;
+$button-background-hover: $yellow;
+$button-color: $purple;
 $button-color-alt: $black;
 $button-radius: $global-radius;
 $button-sizes: (

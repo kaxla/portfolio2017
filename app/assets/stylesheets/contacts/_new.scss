@@ -1,0 +1,29 @@
+.contact {
+  h1 {
+    text-align: center;
+    font-family: "Mr Bedfort", cursive;
+    padding-top: 20px;
+  }
+
+  form {
+    padding: 0 35px;
+  }
+
+  textarea {
+    height: 150px;
+  }
+
+  .send-button {
+    @include button($expand: true);
+    font-family: "Josefin Sans", sans;
+    text-transform: uppercase;
+  }
+}
+
+@include breakpoint(medium) {
+  .contact {
+    form {
+      padding: 0 25%;
+    }
+  }
+}
