@@ -78,6 +78,12 @@
       border: 3px solid $yellow;
     }
   }
+
+  .send-button {
+    @include button($expand: true);
+    font-family: "Josefin Sans", sans;
+    text-transform: uppercase;
+  }
 }
 
 @include breakpoint(medium) {
