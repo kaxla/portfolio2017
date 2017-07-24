@@ -45,13 +45,15 @@
     text-align: center;
   }
 
-  resume-link-wrapper:hover {
+  .resume-link-wrapper:hover {
     background-color: $purple;
     color: $yellow;
   }
   .resume-link {
     font-family: "Josefin Sans", sans;
+    font-size: 1.5em;
     text-transform: uppercase;
+    color: $purple;
   }
 
   .section-header {
