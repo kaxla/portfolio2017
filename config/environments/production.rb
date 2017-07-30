@@ -98,4 +98,10 @@ Rails.application.configure do
     s3_region: ENV.fetch('AWS_REGION'),
     }
   }
+
+  config.action_mailer_delivery_method = :mailgun
+  config.action_mailer.mailgun_settings = {
+    api_key: ENV.fetch('MAILGUN_API_KEY'),
+    domain: ENV.fetch('MAILGUN_DOMAIN')
+  }
 end
