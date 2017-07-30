@@ -1,11 +1,11 @@
 <header>
   <div class="title-bar" data-responsive-toggle="header-menu" data-hide-for="medium">
-    <button class="menu-icon" type="button" data-toggle="header-menu"></button>
+    <button class="menu-icon" type="button" data-toggle></button>
     <div class="title-bar-title"></div>
   </div>
 
   <div class="top-bar" id="header-menu">
-    <ul class="dropdown vertical medium-horizontal menu" data-dropdown-menu>
+    <ul class="dropdown menu" data-dropdown-menu>
       <li <% if controller.controller_name == 'static_pages' %> class='active' <% end %>><%= link_to 'Home', root_path %></li>
       <li <% if controller.controller_name == 'welcome' %> class='active' <% end %>><%= link_to 'Resume', 'https://s3-us-west-2.amazonaws.com/kaylahowser2017portfolio/kayla-howser-resume.pdf' %></li>
       <li <% if controller.controller_name == 'projects' %> class='active' <% end %>><%= link_to 'Projects', projects_path %></li>
