@@ -101,7 +101,12 @@ Rails.application.configure do
 
   config.action_mailer_delivery_method = :mailgun
   config.action_mailer.mailgun_settings = {
-    api_key: ENV.fetch('MAILGUN_API_KEY'),
-    domain: ENV.fetch('MAILGUN_DOMAIN')
+    api_key:       ENV.fetch('MAILGUN_API_KEY'),
+    domain:        ENV.fetch('MAILGUN_DOMAIN'),
+    public_key:    ENV.fetch('MAILGUN_PUBLIC_KEY'),
+    smtp_login:    ENV.fetch('MAILGUN_SMTP_LOGIN'),
+    smtp_password: ENV.fetch('MAILGUN_SMTP_PASSWORD'),
+    smtp_port:     ENV.fetch('MAILGUN_SMTP_PORT'),
+    smtp_server:   ENV.fetch('MAILGUN_SMTP_SERVER')
   }
 end
