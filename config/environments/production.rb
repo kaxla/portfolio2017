@@ -99,14 +99,20 @@ Rails.application.configure do
     }
   }
 
-  config.action_mailer_delivery_method = :mailgun
+  config.action_mailer_delivery_method = :smtp
   config.action_mailer.mailgun_settings = {
+    authentication: :plain,
+    address: "smtp.mailgun.org",
+    port: 587,
+    domain: ENV.fetch('MAILGUN_DOMAIN'),
+    user_name: ENV.fetch('MAILGUN_SMTP_LOGIN'),
+    password: ENV.fetch('MAILGUN_SMTP_PASSWORD'),
     api_key:       ENV.fetch('MAILGUN_API_KEY'),
-    domain:        ENV.fetch('MAILGUN_DOMAIN'),
+    # domain:        ENV.fetch('MAILGUN_DOMAIN'),
     public_key:    ENV.fetch('MAILGUN_PUBLIC_KEY'),
-    smtp_login:    ENV.fetch('MAILGUN_SMTP_LOGIN'),
-    smtp_password: ENV.fetch('MAILGUN_SMTP_PASSWORD'),
-    smtp_port:     ENV.fetch('MAILGUN_SMTP_PORT'),
-    smtp_server:   ENV.fetch('MAILGUN_SMTP_SERVER')
+    # smtp_login:    ENV.fetch('MAILGUN_SMTP_LOGIN'),
+    # smtp_password: ENV.fetch('MAILGUN_SMTP_PASSWORD'),
+    # smtp_port:     ENV.fetch('MAILGUN_SMTP_PORT'),
+    # smtp_server:   ENV.fetch('MAILGUN_SMTP_SERVER')
   }
 end
