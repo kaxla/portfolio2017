@@ -99,20 +99,28 @@ Rails.application.configure do
     }
   }
 
-  config.action_mailer_delivery_method = :smtp
-  config.action_mailer.mailgun_settings = {
-    authentication: :plain,
-    address: "smtp.mailgun.org",
-    port: 587,
-    domain: ENV.fetch('MAILGUN_DOMAIN'),
-    user_name: ENV.fetch('MAILGUN_SMTP_LOGIN'),
-    password: ENV.fetch('MAILGUN_SMTP_PASSWORD'),
-    api_key:       ENV.fetch('MAILGUN_API_KEY'),
-    # domain:        ENV.fetch('MAILGUN_DOMAIN'),
-    public_key:    ENV.fetch('MAILGUN_PUBLIC_KEY'),
-    # smtp_login:    ENV.fetch('MAILGUN_SMTP_LOGIN'),
-    # smtp_password: ENV.fetch('MAILGUN_SMTP_PASSWORD'),
-    # smtp_port:     ENV.fetch('MAILGUN_SMTP_PORT'),
-    # smtp_server:   ENV.fetch('MAILGUN_SMTP_SERVER')
-  }
+  # config.action_mailer_delivery_method = :mailgun
+  # config.action_mailer.mailgun_settings = {
+  #   api_key:       ENV.fetch('MAILGUN_API_KEY'),
+  #   domain:        ENV.fetch('MAILGUN_DOMAIN'),
+  #   public_key:    ENV.fetch('MAILGUN_PUBLIC_KEY'),
+  #   smtp_login:    ENV.fetch('MAILGUN_SMTP_LOGIN'),
+  #   smtp_password: ENV.fetch('MAILGUN_SMTP_PASSWORD'),
+  #   smtp_port:     ENV.fetch('MAILGUN_SMTP_PORT'),
+  #   smtp_server:   ENV.fetch('MAILGUN_SMTP_SERVER')
+  # }
+
+  config.action_mailer.delivery_method = :smtp
+    ActionMailer::Base.smtp_settings = {
+     :address              => ENV['MAILGUN_SMTP_SERVER'],
+     :port                 => ENV['MAILGUN_SMTP_PORT'],
+     :domain               => ENV['MAILGUN_DOMAIN'],
+     :user_name            => ENV['MAILGUN_SMTP_LOGIN'],
+     :password             => ENV['MAILGUN_SMTP_PASSWORD'],
+     :authentication       => 'plain'
+   }
+
+  config.action_mailer.default_url_options = { :host => 'https://sheltered-island-12245.herokuapp.com' }
+  config.action_mailer.asset_host = 'https://sheltered-island-12245.herokuapp.com'
+  config.action_controller.asset_host = 'https://sheltered-island-12245.herokuapp.com'
 end
