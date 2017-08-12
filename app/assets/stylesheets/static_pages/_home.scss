@@ -1,8 +1,20 @@
-.homepage {
-  padding: 5%;
+.top-wrapper {
+  background-image: url("https://s3-us-west-2.amazonaws.com/kaylahowser2017portfolio/portfolio-background.jpg");
+  background-position: center center;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .name-wrapper {
-    padding: 20px 0;
+    background-color: white;
+    opacity: 0.8;
+    width: 70%;
+    padding: 30px 0;
+    font-size: 1.3em;
   }
 
   .name {
@@ -14,26 +26,43 @@
     }
   }
 
-  .headshot {
+  .blurb {
     text-align: center;
-    padding-bottom: 20px;
+    padding: 30px 30px 0 30px;
+    font-family: "Josefin Sans", sans;
+
+  }
+}
+
+.homepage {
+  padding: 5%;
+
+  .avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
 
     img {
-      width: 65%;
       border-radius: 50%;
     }
   }
 
-  .blurb {
-    text-align: center;
-    padding: 0 20px;
+  .resume-contact-links {
+    font-family: "Josefin Sans", sans;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: $purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
   }
 
-  .resume-link-wrapper {
+  .link-wrapper {
     background-color: $yellow;
     padding: 25px;
     width: 80%;
-    margin: 0 auto;
     text-align: center;
     -moz-transition: all .4s ease-in;
     -o-transition: all .4s ease-in;
@@ -41,15 +70,9 @@
     transition: all .4s ease-in;
   }
 
-  .resume-link-wrapper:hover {
+  .link-wrapper:hover {
     background-color: $purple;
     color: $yellow;
-  }
-  .resume-link {
-    font-family: "Josefin Sans", sans;
-    font-size: 1.5em;
-    text-transform: uppercase;
-    color: $purple;
   }
 
   .section-header {
@@ -85,12 +108,15 @@
 }
 
 @include breakpoint(medium) {
-  .homepage {
-    padding: 0 10%;
-
+  .top-wrapper {
     .name-wrapper {
       padding: 40px 0;
+      width: 50%;
     }
+  }
+
+  .homepage {
+    padding: 0 10%;
 
     hr {
       width: 100%;

@@ -11,7 +11,9 @@
   </head>
 
   <body>
-    <%= render 'layouts/header' %>
+    <% if controller.action_name != 'home' %>
+      <%= render 'layouts/header' %>
+    <% end %>
 
     <% if flash[:notice] %>
       <div class="callout secondary">
