@@ -1,7 +1,7 @@
 <div class="top-wrapper">
   <div class="name-wrapper">
     <div class="name">
-      <h1>Kayla Howser</h1>
+      Kayla Howser
     </div>
 
     <div class="row align-center-middle">
@@ -15,48 +15,75 @@
 
 <%= render 'layouts/header' %>
 
-<div class="homepage">
+<div class="avatar">
+  <img src="http://placekitten.com/g/300/300" />
+</div>
 
-  <div class="avatar">
-    <img src="http://placekitten.com/g/300/300" />
+<div class="row align-center">
+  <div class="long-blurb medium-10 columns">
+    With a long-standing interest in web design and development, I built my first website on Angelfire in 2003.
+    I worked in customer support for years but found myself at a crossroads with a strong desire to learn new things.
+    I turned back to my passion for the web, this time in a professional setting. I’ve always been able to empathize
+    and communicate effectively with customers and my relationship management skills have helped me thrive as a
+    freelance developer. Right now, I’ m looking to join a team disrupting their industry. I’d love to work with a
+    company that values my strong understanding of customer needs and my ability to write excellent code,
+    where I will immerse myself in a great product and expand upon my skills.
   </div>
+</div>
 
-  <div class="section-content-wrapper row align-center">
-    <div class="blurb medium-10 columns">
-      With a long-standing interest in web design and development, I built my first website on Angelfire in 2003.
-      I worked in customer support for years but found myself at a crossroads with a strong desire to learn new things.
-      I turned back to my passion for the web, this time in a professional setting. I’ve always been able to empathize
-      and communicate effectively with customers and my relationship management skills have helped me thrive as a
-      freelance developer. Right now, I’ m looking to join a team disrupting their industry. I’d love to work with a
-      company that values my strong understanding of customer needs and my ability to write excellent code,
-      where I will immerse myself in a great product and expand upon my skills.
+<hr>
+
+<div class="row resume-contact-link-wrapper">
+  <a class="link-wrapper medium-6 small-12 columns" href="https://s3-us-west-2.amazonaws.com/kaylahowser2017portfolio/kayla-howser-resume.pdf">
+    <div class="link">
+      Download My Resume
     </div>
-  </div>
+  </a>
 
-  <hr>
+  <a class="link-wrapper medium-6 small-12 columns" href="/contact">
+    <div class="link">
+      Contact Me
+    </div>
+  </a>
+</div>
 
-  <div class="row">
-    <a class="resume-contact-links medium-6 small-12 columns" href="https://s3-us-west-2.amazonaws.com/kaylahowser2017portfolio/kayla-howser-resume.pdf">
-      <div class="link-wrapper">
-        Download My Resume
+<hr>
+
+<div class="home-projects-header">
+  Projects
+</div>
+
+<div class="home-project-blocks">
+  <% @projects.each do |project| %>
+    <% if project.id.even? %>
+    <!-- if the id is even put the image on the left -->
+      <div class="project-wrapper">
+        <a href="<%= project_path(project.id) %>" class="row project-link">
+          <div class="hide-for-small-only large-6 column">
+            <%= image_tag project.image_1.url, class: "project-image" %>
+          </div>
+
+          <div class="project-title large-6 column">
+            <%= project.title %>
+          </div>
+        </a>
       </div>
-    </a>
 
-    <a class="resume-contact-links medium-6 small-12 columns" href="/contact">
-      <div class="link-wrapper">
-        Contact Me
+    <% else %>
+    <!-- if the id is odd put the image on the right -->
+      <div class="project-wrapper">
+        <a href="<%= project_path(project.id) %>" class="row project-link">
+          <div class="project-title large-6 column">
+            <%= project.title %>
+          </div>
+
+          <div class="large-6 hide-for-small-only column">
+            <%= image_tag project.image_1.url, class: "project-image" %>
+          </div>
+        </a>
       </div>
-    </a>
-  </div>
-
-  <hr>
-
-  <div class="section-header projects-header">
-    <h2>Projects</h2>
-  </div>
-
-  <%= render 'projects/project_grid' %>
-
+    <% end %>
+  <% end %>
 </div>
 
 <script>

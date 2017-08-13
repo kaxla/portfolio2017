@@ -62,6 +62,7 @@ $blue: #D2DDDC;
 $off-white: #F7F8EC;
 $purple: #433447;
 $black: #272C32;
+$red: #F9664F;
 
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
@@ -153,7 +154,7 @@ $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: 90%;
-$hr-border: 3px solid $blue;
+$hr-border: 2px solid $blue;
 $hr-margin: rem-calc(20) auto;
 $list-lineheight: $paragraph-lineheight;
 $list-margin-bottom: $paragraph-margin-bottom;

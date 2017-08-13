@@ -14,96 +14,104 @@
     opacity: 0.8;
     width: 70%;
     padding: 30px 0;
-    font-size: 1.3em;
-  }
 
-  .name {
-    text-align: center;
-
-    h1 {
+    .name {
+      text-align: center;
       font-family: "Mr Bedfort", cursive;
-      margin: 0;
+      font-size: 4em;
+      padding: 0 10px;
+      line-height: 1.1;
     }
   }
 
   .blurb {
     text-align: center;
-    padding: 30px 30px 0 30px;
     font-family: "Josefin Sans", sans;
-
+    font-size: 1.2em;
+    padding: 20px 20px 0 20px;
   }
 }
 
-.homepage {
-  padding: 5%;
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
 
-  .avatar {
+  img {
+    border-radius: 50%;
+  }
+}
+
+.long-blurb {
+  text-align: center;
+  padding: 0 30px 30px 30px;
+  font-size: 1.2em
+}
+
+.resume-contact-link-wrapper {
+  padding: 20px;
+
+  .link-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px 0;
-
-    img {
-      border-radius: 50%;
-    }
+    margin: 10px 0;
+    background-color: $yellow;
   }
 
-  .resume-contact-links {
+  .link {
+    color: $purple;
+    padding: 25px;
+    text-align: center;
     font-family: "Josefin Sans", sans;
     font-size: 1.5em;
     text-transform: uppercase;
-    color: $purple;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 0;
-  }
-
-  .link-wrapper {
-    background-color: $yellow;
-    padding: 25px;
-    width: 80%;
-    text-align: center;
     -moz-transition: all .4s ease-in;
     -o-transition: all .4s ease-in;
     -webkit-transition: all .4s ease-in;
     transition: all .4s ease-in;
   }
 
-  .link-wrapper:hover {
-    background-color: $purple;
-    color: $yellow;
+}
+
+.home-projects-header {
+  text-align: center;
+  font-family: "Mr Bedfort";
+  font-size: 4em;
+  padding: 20px 0 40px 0;
+}
+
+.home-project-blocks {
+  .project-wrapper:nth-child(1) {
+    background-color: $red;
   }
 
-  .section-header {
+  .project-wrapper:nth-child(2n+2) {
+    background-color: $blue;
+  }
+
+  .project-wrapper:nth-child(3n+3) {
+    background-color: $yellow;
+  }
+
+  .project-wrapper:nth-child(4n+4) {
+    background-color: $red;
+  }
+
+  .project-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+  }
+
+  .project-title {
     text-align: center;
-
-    h2 {
-      font-family: "Mr Bedfort";
-    }
-  }
-
-  .project {
-    .title-block {
-      text-align: center;
-      border: 3px solid $blue;
-      padding: 30px 0;
-      -moz-transition: all .4s ease-in;
-      -o-transition: all .4s ease-in;
-      -webkit-transition: all .4s ease-in;
-      transition: all .4s ease-in;
-    }
-
-    .title-block:hover {
-      background-color: $purple;
-      border: 3px solid $yellow;
-    }
-  }
-
-  .send-button {
-    @include button($expand: true);
     font-family: "Josefin Sans", sans;
+    font-size: 1.5em;
     text-transform: uppercase;
+    color: $purple;
   }
 }
 
@@ -115,27 +123,36 @@
     }
   }
 
-  .homepage {
-    padding: 0 10%;
+  hr {
+    width: 100%;
+  }
 
-    hr {
-      width: 100%;
+  .resume-link {
+    padding: 20px 0;
+  }
+
+  .section-header {
+    padding-top: 25px;
+  }
+
+  .project {
+    height: 400px;
+
+    a {
+      height: 400px;
     }
 
-    .resume-link {
-      padding: 20px 0;
-    }
-
-    .section-header {
-      padding-top: 25px;
+    .project-image {
+      width: 350px;
     }
 
     .projects-header {
       padding-bottom: 25px;
     }
 
-    .section-content-wrapper {
-      padding-bottom: 25px
-    }
+  }
+
+  .section-content-wrapper {
+    padding-bottom: 25px
   }
 }
