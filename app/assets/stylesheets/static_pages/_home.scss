@@ -72,7 +72,6 @@
     -webkit-transition: all .4s ease-in;
     transition: all .4s ease-in;
   }
-
 }
 
 .home-projects-header {
@@ -111,7 +110,7 @@
     font-family: "Josefin Sans", sans;
     font-size: 1.5em;
     text-transform: uppercase;
-    color: $purple;
+    color: black;
   }
 }
 
@@ -120,39 +119,47 @@
     .name-wrapper {
       padding: 40px 0;
       width: 50%;
+
+      .name {
+        font-size: 6em;
+        padding-bottom: 20px;
+      }
     }
+  }
+
+  .avatar {
+    padding: 50px 0;
   }
 
   hr {
     width: 100%;
   }
 
-  .resume-link {
-    padding: 20px 0;
+  .resume-contact-link-wrapper {
+    .link-wrapper {
+
+    }
   }
 
-  .section-header {
-    padding-top: 25px;
+  .home-projects-header {
+    font-size: 5em;
   }
 
-  .project {
-    height: 400px;
-
-    a {
+  .home-project-blocks {
+    .project-wrapper {
       height: 400px;
+
+      .project-link {
+        height: 400px;
+      }
+
+      .project-image {
+        height: 350px;
+      }
+
+      .project-title {
+        font-size: 3em;
+      }
     }
-
-    .project-image {
-      width: 350px;
-    }
-
-    .projects-header {
-      padding-bottom: 25px;
-    }
-
-  }
-
-  .section-content-wrapper {
-    padding-bottom: 25px
   }
 }
