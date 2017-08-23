@@ -1,11 +1,20 @@
-<div class="project-show">
-  <h1><%= @project.title %></h1>
-  <div class="project-description"><%= markdown(@project.description) %></div>
+<div class="project-show-title">
+  <%= @project.title %>
+</div>
 
-  <div class="delete-edit">
-    <% if logged_in? %>
-      <%= link_to "Delete Project", project_path(@project), method: :delete, data: {confirm: "No, but really?"}, class: 'delete button' %>
-      <%= link_to "Edit Project", edit_project_path(@project), class: "delete button" %>
-    <% end %>
-  </div>
+<div class="visit-site row align-center">
+  <a href="<%= @project.title %>" class="button medium">
+    Visit Live Site
+  </a>
+</div>
+
+<div class="project-show-description">
+  <%= markdown(@project.description) %>
+</div>
+
+<div class="delete-edit">
+  <% if logged_in? %>
+    <%= link_to "Delete Project", project_path(@project), method: :delete, data: {confirm: "No, but really?"}, class: 'delete button' %>
+    <%= link_to "Edit Project", edit_project_path(@project), class: "delete button" %>
+  <% end %>
 </div>
