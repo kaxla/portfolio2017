@@ -10,29 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170721224316) do
+ActiveRecord::Schema.define(version: 20170823214939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "contacts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "projects", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image_1_file_name"
-    t.string "image_1_content_type"
-    t.integer "image_1_file_size"
-    t.datetime "image_1_updated_at"
-    t.string "image_2_file_name"
-    t.string "image_2_content_type"
-    t.integer "image_2_file_size"
-    t.datetime "image_2_updated_at"
+    t.string "homepage_image_file_name"
+    t.string "homepage_image_content_type"
+    t.integer "homepage_image_file_size"
+    t.datetime "homepage_image_updated_at"
+    t.string "index_image_file_name"
+    t.string "index_image_content_type"
+    t.integer "index_image_file_size"
+    t.datetime "index_image_updated_at"
     t.string "image_3_file_name"
     t.string "image_3_content_type"
     t.integer "image_3_file_size"
@@ -41,6 +36,7 @@ ActiveRecord::Schema.define(version: 20170721224316) do
     t.string "image_4_content_type"
     t.integer "image_4_file_size"
     t.datetime "image_4_updated_at"
+    t.string "url"
   end
 
   create_table "users", force: :cascade do |t|

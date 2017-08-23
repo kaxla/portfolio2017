@@ -5,13 +5,21 @@
   </div>
 
   <div class="field">
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </div>
+
+  <div class="field">
     <%= f.label :description %>
     <%= f.text_area :description %>
   </div>
 
+
   <div>
-    <%= f.file_field :image_1, class: "choose-file-button"%>
-    <%= f.file_field :image_2, class: "choose-file-button"%>
+    <%= f.label :homepage_image %>
+    <%= f.file_field :homepage_image, class: "choose-file-button"%>
+    <%= f.label :index_image %>
+    <%= f.file_field :index_image, class: "choose-file-button"%>
     <%= f.file_field :image_3, class: "choose-file-button"%>
     <%= f.file_field :image_4, class: "choose-file-button"%>
   </div>
