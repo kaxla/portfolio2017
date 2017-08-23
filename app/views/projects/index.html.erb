@@ -6,7 +6,7 @@
   <% @projects.each do |project| %>
   <a href="<%= project_path(project.id) %>" class="column project-index">
     <div class="project-index-image hide-for-small-only">
-      <%= image_tag project.image_2.url(:medium) %>
+      <%= image_tag project.index_image.url(:medium) %>
     </div>
 
     <div class="project-index-title">
