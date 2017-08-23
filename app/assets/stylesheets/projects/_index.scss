@@ -1,60 +1,83 @@
-.title {
+.project-index-header {
   text-align: center;
-  padding: 20px;
+  font-family: "Mr Bedfort", cursive;
+  font-size: 4em;
+  padding: 50px 0;
+}
 
-  h1 {
-    font-family: "Mr Bedfort", cursive;
-    margin: 0;
+.project-index-blocks {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: initial;
+}
+
+.project-index {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .project-index-title {
+    text-align: center;
+    font-family: "Josefin Sans", sans;
+    text-transform: uppercase;
+    font-size: 1.4em;
+    color: black;
   }
 }
 
-.project {
-  .title-block {
-    text-align: center;
-    border: 3px solid $blue;
-    padding: 30px 0;
-    -moz-transition: all .4s ease-in;
-    -o-transition: all .4s ease-in;
-    -webkit-transition: all .4s ease-in;
-    transition: all .4s ease-in;
-  }
+.project-index:nth-child(1) {
+  background-color: $red;
+}
 
-  .title-block:hover {
-    background-color: $purple;
-    border: 3px solid $yellow;
-  }
+.project-index:nth-child(2n+2) {
+  background-color: $blue;
+}
 
-  a {
-    font-family: "Josefin Sans", sans;
-    text-transform: uppercase;
-    color: $purple;
-    font-size: 1.3rem;
-  }
+.project-index:nth-child(3n+3) {
+  background-color: $yellow;
+}
 
-  a:hover {
-    color: $yellow;
-  }
+.project-index:nth-child(4n+4) {
+  background-color: $red;
+}
+
+.new-project-link-index {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  color: black;
 }
 
 @include breakpoint(medium) {
+  .project-index-header {
+    font-size: 5em;
+    margin: 30px 0;
+  }
+  
   .project-index {
-    .title {
-      padding: 30px;
+    height: 500px;
+    display: block;
+    position: relative;
+
+    .project-index-title {
+      color: #F7F8EC;
+      font-size: 3em;
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $black;
+      transition: opacity .5s;
     }
 
-    .project-wrapper {
-      width: 80%;
-
-      .title-block {
-        height: 300px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .project-title {
-          font-size: 2rem;
-        }
-      }
+    .project-index-title:hover {
+      opacity: .8;
+      transition: opacity .5s;
     }
   }
 }

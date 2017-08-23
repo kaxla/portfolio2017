@@ -1,13 +1,19 @@
-<div class="project-index">
-  <div class="title">
-    <h1>My Projects</h1>
-  </div>
+<div class="project-index-header">
+  My Projects
+</div>
 
-  <%= render 'project_grid' %>
+<div class="row small-up-1 medium-up-2 project-index-blocks">
+  <% @projects.each do |project| %>
+  <a href="<%= project_path(project.id) %>" class="column project-index">
+    <div class="project-index-title">
+      <%= project.title %>
+    </div>
+  </a>
+  <% end %>
+</div>
 
-  <div>
-    <% if logged_in? %>
-      <%= link_to 'Create New Project', new_project_path, class: 'button' %>
-    <% end %>
-  </div>
+<div class="new-project-link-index">
+  <% if logged_in? %>
+    <%= link_to 'Create New Project', new_project_path, class: 'button' %>
+  <% end %>
 </div>
