@@ -57,10 +57,10 @@
     justify-content: center;
     align-items: center;
     margin: 10px 0;
-    background-color: $yellow;
   }
 
   .link {
+    background-color: $yellow;
     color: $purple;
     padding: 25px;
     text-align: center;
@@ -136,8 +136,9 @@
   }
 
   .resume-contact-link-wrapper {
-    .link-wrapper {
-
+    .link {
+      background-color: $yellow;
+      width: 90%;
     }
   }
 
