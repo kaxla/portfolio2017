@@ -2,10 +2,22 @@
   <%= @project.title %>
 </div>
 
-<div class="visit-site row align-center">
-  <a href="<%= @project.url %>" class="button medium">
-    Visit Live Site
-  </a>
+<div class="visit-site">
+  <% if @project.url != nil %>
+    <a href="<%= @project.url %>" class="button medium">
+      <div class="project-link">
+        Visit Live Site
+      </div>
+    </a>
+  <% end %>
+
+  <% if @project.github_repo != nil %>
+    <a href="<%= @project.github_repo %>" class="button medium">
+      <div class="project-link">
+        Visit Github Repo
+      </div>
+    </a>
+  <% end %>
 </div>
 
 <div class="project-show-description">
