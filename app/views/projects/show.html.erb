@@ -3,7 +3,7 @@
 </div>
 
 <div class="visit-site">
-  <% if @project.url != nil %>
+  <% if @project.url.present? %>
     <a href="<%= @project.url %>" class="button medium">
       <div class="project-link">
         Visit Live Site
@@ -11,7 +11,7 @@
     </a>
   <% end %>
 
-  <% if @project.github_repo != nil %>
+  <% if @project.github_repo.present? %>
     <a href="<%= @project.github_repo %>" class="button medium">
       <div class="project-link">
         Visit Github Repo
