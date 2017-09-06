@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-  def resume
+  def fulltime
   end
 
   def home

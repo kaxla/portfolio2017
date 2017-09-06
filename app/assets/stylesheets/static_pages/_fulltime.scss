@@ -1,0 +1,52 @@
+.fulltime-header {
+  text-align: center;
+  font-family: "Mr Bedfort", cursive;
+  font-size: 4em;
+  padding: 20px 0;
+}
+
+.fulltime-blurb {
+  padding: 0 30px 30px 30px;
+  text-align: center;
+}
+
+.fulltime-resume-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fulltime-resume {
+  padding: 0 10px 30px 10px;
+  text-align: center;
+}
+
+.fulltime-link-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.fulltime-link {
+  background-color: $purple;
+  color: $off-white;
+  padding: 25px;
+  text-align: center;
+  font-family: "Josefin Sans", sans;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  -moz-transition: all .4s ease-in;
+  -o-transition: all .4s ease-in;
+  -webkit-transition: all .4s ease-in;
+  transition: all .4s ease-in;
+}
+
+.fulltime-link:hover {
+  background-color: $yellow;
+}
+
+@include breakpoint(medium) {
+  .fulltime-blurb {
+    padding: 0 25% 30px;
+  }
+}

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
-  get 'resume', to: 'static_pages#resume'
+  get 'fulltime', to: 'static_pages#fulltime'
   get 'contact', to: 'contacts#new'
   post 'contact', to: 'contacts#create'
 end
