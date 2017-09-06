@@ -6,12 +6,12 @@
 
   <div class="top-bar" id="header-menu">
     <ul class="dropdown menu" data-dropdown-menu>
-      <li <% if controller.controller_name == 'static_pages' %> class='active' <% end %>><%= link_to 'Home', root_path %></li>
-      <li <% if controller.controller_name == 'welcome' %> class='active' <% end %>><%= link_to 'Resume', fulltime_path %></li>
-      <li <% if controller.controller_name == 'projects' %> class='active' <% end %>><%= link_to 'Projects', projects_path %></li>
-      <li <% if controller.controller_name == 'contacts' %> class='active' <% end %>><%= link_to 'Contact', contact_path %></li>
-      <li><a href="http://github.com/kaxla">Github</a></li>
-      <li><a href="http://linkedin.com/in/kaylahowser">LinkedIn</a></li>
+      <li <% if controller.controller_name == 'static_pages' %> class='active' <% end %>><%= link_to 'Home', root_path, target: '_blank' %></li>
+      <li <% if controller.controller_name == 'welcome' %> class='active' <% end %>><%= link_to 'Resume', fulltime_path, target: '_blank' %></li>
+      <li <% if controller.controller_name == 'projects' %> class='active' <% end %>><%= link_to 'Projects', projects_path, target: '_blank' %></li>
+      <li <% if controller.controller_name == 'contacts' %> class='active' <% end %>><%= link_to 'Contact', contact_path, target: '_blank' %></li>
+      <li><a href="http://github.com/kaxla" target="_blank">Github</a></li>
+      <li><a href="http://linkedin.com/in/kaylahowser" target="_blank">LinkedIn</a></li>
       <% if logged_in? %>
         <li>
           <%= link_to 'Log Out', logout_path %>

@@ -31,13 +31,13 @@
 <hr>
 
 <div class="row resume-contact-link-wrapper">
-  <a class="medium-6 small-12 columns link-wrapper" href="/contact">
+  <a class="medium-6 small-12 columns link-wrapper" href="/contact" target="_blank">
     <div class="link">
       Contact Me
     </div>
   </a>
 
-  <a class="medium-6 small-12 columns link-wrapper" href="https://s3-us-west-2.amazonaws.com/kaylahowser2017portfolio/kayla-howser-resume.pdf">
+  <a class="medium-6 small-12 columns link-wrapper" href="/fulltime" target="_blank">
     <div class="link">
       I'm going full time!
     </div>
@@ -55,7 +55,7 @@
     <% if project.id.even? %>
     <!-- if the id is even put the image on the left -->
       <div class="project-wrapper">
-        <a href="<%= project_path(project.id) %>" class="row project-link">
+        <a href="<%= project_path(project.id) %>" class="row project-link" target="_blank">
           <div class="hide-for-small-only large-6 column">
             <%= image_tag project.homepage_image.url, class: "project-image" %>
           </div>
@@ -69,7 +69,7 @@
     <% else %>
     <!-- if the id is odd put the image on the right -->
       <div class="project-wrapper">
-        <a href="<%= project_path(project.id) %>" class="row project-link">
+        <a href="<%= project_path(project.id) %>" class="row project-link" target="blank">
           <div class="project-title large-6 column">
             <%= project.title %>
           </div>
